@@ -16,6 +16,9 @@ switch options { </br>
    print(1) </br>
   case "2" : </br>
    print(2) </br>
+  default: </br>
+   print("Error")</b>
+}</br>
 ## Optionals
 
 

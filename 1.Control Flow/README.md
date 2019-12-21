@@ -21,8 +21,6 @@ switch options {
    print("Error")
 }
 ```
-## Optionals
-
 
 ## UIProgressView - Track time#Goals
 

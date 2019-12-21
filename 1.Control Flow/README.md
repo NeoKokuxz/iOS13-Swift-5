@@ -11,14 +11,16 @@
 ## UIProgressView - Track time#Goals
 
 ## Swift Switch Statement / Disctionaries
-switch options { </br>
-  case "1" : </br>
-   print(1) </br>
-  case "2" : </br>
-   print(2) </br>
-  default: </br>
-   print("Error")</b>
-}</br>
+'''swift
+switch options {
+  case "1" :
+   print(1)
+  case "2" :
+   print(2) 
+  default:
+   print("Error")
+}
+...
 ## Optionals
 
 

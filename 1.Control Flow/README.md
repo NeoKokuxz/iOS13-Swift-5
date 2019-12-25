@@ -26,8 +26,4 @@ switch options {
 
 ## Swift Switch Statement / Disctionaries
 
-
-## Optionals
-
-
 ## UIProgressView - Track time

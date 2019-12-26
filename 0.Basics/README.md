@@ -18,3 +18,18 @@
 ```
 
 ## Design Patterns & Code Structures
+
+## Simple Timer 
+```Swift
+timer:Int = 0
+//then set timer to desired time 
+Timer.scheduleTimer(timeInterval: 1.0, target:self, selector:#selector(updateTimer), userInfo:nil, repeats:true)
+
+//print out the remaining time
+@obj func updateTimer(){
+ if time>0 {
+  print("\(time) sec")
+  time -= 1
+ }
+}
+```

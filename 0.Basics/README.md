@@ -50,9 +50,19 @@ struct book {
  let name = "Neo"
  var nickName = ["Naoki","Ty", "Jack"]
  var resources = ["money":20, "car":5, "gold":30]
+ 
+ func info() {
+  print("Book infomation")
+ }
 }
 
 var myBook = book()
 
 print(myBook.nickName) //Naoki, Ty, Jack
+
+//add more into array
+myBook.nickName.append("Youssef") //will add into the nickName array
+
+print(myBook.info) //will print Book infomation
 ```
+

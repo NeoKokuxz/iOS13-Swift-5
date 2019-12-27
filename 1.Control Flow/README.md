@@ -21,9 +21,7 @@ switch options {
    print("Error")
 }
 ```
+## Design Partterns & Model View Controller Parttern
 
-## UIProgressView - Track time#Goals
 
-## Swift Switch Statement / Disctionaries
 
-## UIProgressView - Track time

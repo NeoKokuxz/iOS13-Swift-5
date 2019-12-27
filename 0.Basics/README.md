@@ -17,8 +17,6 @@
  //However if optional string is nil, the ! will found fatal error
 ```
 
-## Design Patterns & Code Structures
-
 ## Simple Timer 
 ```Swift
 timer:Int = 0
@@ -39,8 +37,22 @@ Timer.scheduleTimer(timeInterval: 1.0, target:self, selector:#selector(updateTim
 var arr = [["Hello World", "True"], 
            ["2nd Array", "False"]]
 ```
+
 ## Get button text - current title
 ```Swift
 //sender: UIButton
 var text = sender.currentTitle //Whatever text display on button
+```
+
+## Design Patterns & Code Structures
+```Swift
+struct book {
+ let name = "Neo"
+ var nickName = ["Naoki","Ty", "Jack"]
+ var resources = ["money":20, "car":5, "gold":30]
+}
+
+var myBook = book()
+
+print(myBook.nickName) //Naoki, Ty, Jack
 ```

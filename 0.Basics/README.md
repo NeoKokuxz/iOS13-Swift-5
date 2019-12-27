@@ -39,3 +39,8 @@ Timer.scheduleTimer(timeInterval: 1.0, target:self, selector:#selector(updateTim
 var arr = [["Hello World", "True"], 
            ["2nd Array", "False"]]
 ```
+## Get button text - current title
+```Swift
+//sender: UIButton
+var text = sender.currentTitle //Whatever text display on button
+```

@@ -1,8 +1,5 @@
 # Goals
 
-## Swift Switch Statement / Disctionaries
-
-
 ## Optionals
 && AND </br>
 || OR </br>
@@ -21,7 +18,6 @@ switch options {
    print("Error")
 }
 ```
-## Design Partterns & Model View Controller Parttern
 
 
 

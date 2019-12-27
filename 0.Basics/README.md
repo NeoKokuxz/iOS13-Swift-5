@@ -33,3 +33,9 @@ Timer.scheduleTimer(timeInterval: 1.0, target:self, selector:#selector(updateTim
  }
 }
 ```
+
+## 2D Array - [[String]]
+```Swift
+var arr = [["Hello World", "True"], 
+           ["2nd Array", "False"]]
+```

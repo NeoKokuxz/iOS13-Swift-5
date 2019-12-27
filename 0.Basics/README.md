@@ -47,10 +47,12 @@ var text = sender.currentTitle //Whatever text display on button
 ## Design Patterns & Code Structures
 ```Swift
 struct book {
+ //Properties:
  let name = "Neo"
  var nickName = ["Naoki","Ty", "Jack"]
  var resources = ["money":20, "car":5, "gold":30]
  
+ //Method
  func info() {
   print("Book infomation")
  }
@@ -64,5 +66,28 @@ print(myBook.nickName) //Naoki, Ty, Jack
 myBook.nickName.append("Youssef") //will add into the nickName array
 
 print(myBook.info) //will print Book infomation
+
+// structname() => init(){}
+struct town {
+ var name : [String]
+ var population : Int
+ var stats : [String:Int]
+ //init(townName: String, people: Int, info: [String: Int]){
+  //townName = name
+  //people = population
+  //info = stats
+  //or using self
+  //}
+ init(name:String, population:Int, stats: [String: Int]){
+  self.name = name
+  self.population = population
+  self.stats = stats
+ }
+}
+
+var newTown = town(townName: "HelloLand", people: 5, info:["Neo":23])
+newTown.population += 1 //Makes it 5=>6
+newTown.stats.append([String:Int]) //?
+
 ```
 

@@ -90,5 +90,17 @@ newTown.population += 1 //Makes it 5=>6
 newTown.stats.append([String:Int]) //?
 
 ```
+# MVC - Model View Controller
+Model - logic & data
+View - user interface
+Controller - mediator
 
+# Function return type
+```Swift
+func getChange(money:Int) -> Int {
+ var change = money - 2
+ return change
+}
 
+var myChange = getChange(4) //return value 2
+```

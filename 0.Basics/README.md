@@ -91,9 +91,9 @@ newTown.stats.append([String:Int]) //?
 
 ```
 # MVC - Model View Controller
-Model - logic & data
-View - user interface
-Controller - mediator
+Model - logic & data </br>
+View - user interface </br>
+Controller - mediator </br>
 
 # Function return type
 ```Swift
@@ -104,3 +104,10 @@ func getChange(money:Int) -> Int {
 
 var myChange = getChange(4) //return value 2
 ```
+# Immutability
+//modify the func inside the struct
+```Swift 
+var name : [String: Int] = ["bilibili": 50]
+mutating func name(){
+  name["neo"] = 20 //[neo:20, bilibili:50] 
+}

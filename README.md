@@ -14,4 +14,4 @@ https://github.com/NeoKokuxz/Pursuit-Core-iOS/blob/master/fundamentals/types-var
 - [ ] OOP/POP
 
 ## Projects 
-- tba
+- BMI Calculator

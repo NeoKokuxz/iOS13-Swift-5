@@ -96,7 +96,8 @@ class MyViewController : UIViewController {
 ```Swift
 override func prepare(for segue: UIStoryboardSegue, sender: Any?){
   if segue.identifier == "calculateSeg" {
-    let destinatVC = segue.destination as! ResultViewViewController //telling swift that our destination will always be ResultViewControll through calculateSeg
+    //telling swift that our destination will always be ResultViewControll through calculateSeg
+    let destinatVC = segue.destination as! ResultViewViewController
     destinatVC.resultValue = BMIValue
     }
 }

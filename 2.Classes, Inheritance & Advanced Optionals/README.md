@@ -32,5 +32,9 @@ Class Enemy {
 //Class subclassName : superclassName {}
 Class Dragon : Enemy {
   
+  //subclass can override the method from super class
+  override move {
+    print("Dragon moving forward 5m")
+  }
 }
 ```

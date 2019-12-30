@@ -91,4 +91,13 @@ class MyViewController : UIViewController {
   }
 }
 ```
+# DownCasting as! or as?
 
+```Swift
+override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+  if segue.identifier == "calculateSeg" {
+    let destinatVC = segue.destination as! ResultViewViewController //telling swift that our destination will always be ResultViewControll through calculateSeg
+    destinatVC.resultValue = BMIValue
+    }
+}
+```

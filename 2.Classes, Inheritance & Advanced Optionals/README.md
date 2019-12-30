@@ -46,7 +46,7 @@ Class Dragon : Enemy {
 
 # Struct vs. Class
 
-Stuct doesn't need init and Class does need
+Stuct doesn't need init and Class does need </br>
 let name = class() //only holds reference to the object
 ```
 var name = struct() //it will modify the object once value change by destorying the old one. 

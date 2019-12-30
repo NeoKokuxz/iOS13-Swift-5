@@ -2,6 +2,7 @@
 
 ## Basics
 [Appbrewery](https://www.appbrewery.co/p/ios-course-resources/)
+
 [Pursuit](https://github.com/NeoKokuxz/Pursuit-Core-iOS/blob/master/fundamentals/types-variables-logic-operations/README.md)
 
 ## Working Progress

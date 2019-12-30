@@ -45,11 +45,12 @@ Class Dragon : Enemy {
 ```
 
 # Struct vs. Class
+
 Stuct doesn't need init and Class does need
 let name = class() //only holds reference to the object
-var name = struct() //it will modify the object once value change by destorying the old one
-                    //struct also create new object instead of passing reference to it.
-                    //Example: struct 2 = struct 1 => result a copy of struct 1 into stuct 2, not passing the reference to struct 1
+var name = struct() //it will modify the object once value change by destorying the old one. </br>
+                    //struct also create new object instead of passing reference to it.</br>
+                    //Example: struct 2 = struct 1 => result a copy of struct 1 into stuct 2, not passing the reference to struct 1.</br>
 ```Swift
 //Stuct modification always need mutating infront of the func
 Stuct Enemy {

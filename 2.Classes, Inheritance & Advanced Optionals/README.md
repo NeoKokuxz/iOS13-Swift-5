@@ -45,7 +45,8 @@ Class Dragon : Enemy {
 ```
 
 # Struct vs. Class
-
+- struct is pass by value, immutable.
+- class is pass by reference, inheritance. 
 Stuct doesn't need init and Class does need </br>
 let name = class() //only holds reference to the object
 ```
@@ -71,3 +72,23 @@ Class Enemy {
 }
 //Class creation
 let dragon = Enemy(HP: 50, Attack: 30) //Must provide values
+```
+
+## Custom UIViewController
+- UIKit
+
+```Swift
+import UIKit
+
+class MyViewController : UIViewController {
+  override func viewDidLoad {
+    super.viewDidLoad()
+    
+    let label = UILabel()
+    label.text = "name: Neo"
+    label.frame = CGRect(x:0, y:0, width: 100, height: 50)
+    view.addSubview(label)
+  }
+}
+```
+

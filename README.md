@@ -1,4 +1,4 @@
-# IOS13-Swift5
+# iOS13&Swift5
 
 ## Basics
 [Appbrewery](https://www.appbrewery.co/p/ios-course-resources/)

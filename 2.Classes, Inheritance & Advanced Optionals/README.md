@@ -36,5 +36,35 @@ Class Dragon : Enemy {
   override move {
     print("Dragon moving forward 5m")
   }
+  
+  override attack {
+    super.attack() //Will call the attack method from Enemy super class
+    print("Fire attack! Deals 20 damage")
+  }
 }
 ```
+
+# Struct vs. Class
+Stuct doesn't need init and Class does need
+let name = class() //only holds reference to the object
+var name = struct() //it will modify the object once value change by destorying the old one
+                    //struct also create new object instead of passing reference to it.
+                    //Example: struct 2 = struct 1 => result a copy of struct 1 into stuct 2, not passing the reference to struct 1
+```Swift
+//Stuct modification always need mutating infront of the func
+Stuct Enemy {
+  var HP : Int
+  var Attack : Int
+}
+
+Class Enemy {
+  var HP : Int
+  var Attack : Int
+  
+  init(HP:Int, Attack:Int){
+    self.HP = HP
+    self.Attack = Attack
+  }
+}
+//Class creation
+let dragon = Enemy(HP: 50, Attack: 30) //Must provide values

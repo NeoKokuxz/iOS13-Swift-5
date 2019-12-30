@@ -7,13 +7,13 @@
 
 ## Working Progress
 - [ ] SwiftUI with Combine 
-- [ ] SwiftUI with UIkit
+- [ ] SwiftUI with UIkit - inProgress
 - [ ] Bridge 
-- [ ] MVC and MVVM
-- [ ] Design Pattern 
+- [ ] MVC and MVVM - MVC done /MVVM inProgress
+- [x] Design Pattern 
 - [ ] Reactive Programming/Functional Programming
-- [ ] OOP/POP
+- [ ] OOP/POP - 
 
 ## Projects 
 - [BMI Calculator](https://github.com/NeoKokuxz/IOS13-Swift5/tree/master/2.Classes%2C%20Inheritance%20%26%20Advanced%20Optionals/BMI-Calculator-iOS13-master)
-- 
+- Coming soon

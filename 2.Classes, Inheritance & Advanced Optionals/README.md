@@ -3,6 +3,9 @@
 ## UISlider
 //Max and Min value for the slider
 
+```Swift
+Slider.value //check slider current value
+```
 
 ## String Formatting
 ```Swift

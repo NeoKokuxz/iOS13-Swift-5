@@ -102,3 +102,32 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?){
     }
 }
 ```
+
+# Advanced Optionals
+- Force Unwrapping
+```Swift
+  optional!
+```
+- Check for nil value
+```Swift
+if optional != nil {
+  optional!
+}
+```
+- Optional Binding
+```Swift
+if let safeOptional = optional {
+  safeOptional
+}
+```
+- Nil Coalescing Operator
+```Swift
+optional ?? defaultValue
+```
+- Optional Chaining 
+```Swift
+optional?.property
+optional?.method()
+```
+
+

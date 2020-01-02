@@ -110,7 +110,11 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?){
 - Force Unwrapping
   - Check for nil value before force unwrapping the optional string. 
 ```Swift
-  optional!
+  optional! //Force Unwrapping the value
+  
+  if optional != nil {
+    optional!
+  }
 ```
 - Check for nil value
 ```Swift

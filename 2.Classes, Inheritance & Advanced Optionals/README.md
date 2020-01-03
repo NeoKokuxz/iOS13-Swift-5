@@ -124,18 +124,40 @@ if optional != nil {
 ```
 - Optional Binding
 ```Swift
+//Note that safeOptional is a String while optional is String?
+//The if statement makes only optional != nil
 if let safeOptional = optional {
   safeOptional
 }
 ```
 - Nil Coalescing Operator
 ```Swift
-optional ?? defaultValue
+//provide defaultValue while nil 
+optional ?? defaultValue //structure
+optional = nil
+let text = optional ?? "I am default string" //if nil, give it the default string. 
 ```
 - Optional Chaining 
 ```Swift
+//? means only if optional isn't nil, then process to property or method after
 optional?.property
 optional?.method()
+
+struct MyOptional {
+  var property = 50
+  func method(){
+    print("I am a method inside optional! wowowow")
+  }
+}
+
+//set up myOptional using MyOptional struct
+let myOptional: MyOptional? 
+
+//set myOptional to nil
+myOptional = nil
+
+print(myOptional!.property) //Force unwrapping will cause fatal error and crash.
+print(myOptional?.property) //It will not crash and print nil value instead.
 ```
 
 

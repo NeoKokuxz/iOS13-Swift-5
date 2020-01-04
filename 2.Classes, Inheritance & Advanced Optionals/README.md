@@ -156,6 +156,11 @@ myOptional = nil
 
 print(myOptional!.property) //Force unwrapping will cause fatal error and crash.
 print(myOptional?.property) //It will not crash and print nil value instead.
+
+//if myOptional is initialized
+myOptional = MyOptional() //Using the struct
+myOptional.method() //this will print the string "I am a method inside optional! wowowow" 
+
 ```
 
 

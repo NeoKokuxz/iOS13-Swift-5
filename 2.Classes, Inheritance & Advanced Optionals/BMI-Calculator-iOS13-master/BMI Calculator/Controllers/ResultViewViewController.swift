@@ -11,11 +11,19 @@ import UIKit
 class ResultViewViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var resultAdviceLabel: UILabel!
+    
+    var resultValue:String?
+    var resultAdvice:String?
+    var resultColor:UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        resultLabel.text = resultValue
+        view.backgroundColor = resultColor
+        resultAdviceLabel.text = resultAdvice
     }
     
 

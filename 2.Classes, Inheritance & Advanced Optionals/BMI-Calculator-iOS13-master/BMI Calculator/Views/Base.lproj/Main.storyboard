@@ -130,7 +130,7 @@
                         <outlet property="heightSliderValue" destination="Pky-qY-oVp" id="UWa-bx-OZf"/>
                         <outlet property="weightLabel" destination="LTF-aL-8qu" id="Gqa-Oo-9J3"/>
                         <outlet property="weightSliderValue" destination="s2X-C5-Zcz" id="Jhl-jI-3nb"/>
-                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="calculateSeg" modalPresentationStyle="fullScreen" id="h2a-sc-Pad"/>
+                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="calculateSeg" modalPresentationStyle="fullScreen" id="Is6-ud-hFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -207,6 +207,7 @@
                         <viewLayoutGuide key="safeArea" id="wMZ-LG-Y4P"/>
                     </view>
                     <connections>
+                        <outlet property="resultAdviceLabel" destination="9IV-CT-mxw" id="W62-dm-cP2"/>
                         <outlet property="resultLabel" destination="VU9-2W-Sd5" id="vvR-Z2-tdE"/>
                     </connections>
                 </viewController>

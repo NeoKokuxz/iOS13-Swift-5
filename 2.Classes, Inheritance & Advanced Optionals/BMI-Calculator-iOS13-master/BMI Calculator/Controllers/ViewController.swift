@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //Use the struct from Models folder
+    var calculator = CalculateMethods()
+    
     //Display label for height and weight
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -17,6 +20,9 @@ class ViewController: UIViewController {
     //Current value for both height and weight slider
     @IBOutlet weak var heightSliderValue: UISlider!
     @IBOutlet weak var weightSliderValue: UISlider!
+    
+    var BMIValue:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,12 +36,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "calculateSeg", sender: self)
         let height = heightSliderValue.value
         let weight = weightSliderValue.value
         
-        let BMI = String(format: "%.2f", (weight * 703) / pow((height*39.37), 2))
-        
+        calculator.calculateBMI(height: height, weight: weight)
+        performSegue(withIdentifier: "calculateSeg", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "calculateSeg" {
+            let destinatVC = segue.destination as! ResultViewViewController
+            destinatVC.resultValue = calculator.getBMI()
+            destinatVC.resultAdvice = calculator.getAdvice()
+            destinatVC.resultColor = calculator.getColor()
+        }
     }
 }
 

@@ -8,13 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculateViewController: UIViewController {
 
+    @IBOutlet weak var billTextField: UITextField!
+    @IBOutlet weak var zeroBtn: UIButton!
+    @IBOutlet weak var tenBtn: UIButton!
+    @IBOutlet weak var twentyBtn: UIButton!
+    @IBOutlet weak var splitNumBtn: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func tipChanged(_ sender: UIButton) {
+    }
+    
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+    }
+    
+    @IBAction func calculatePressed(_ sender: Any) {
+    }
 }
 

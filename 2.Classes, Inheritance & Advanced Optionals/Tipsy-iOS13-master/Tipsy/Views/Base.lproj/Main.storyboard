@@ -93,7 +93,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="ypB-pl-mYK">
                                                 <rect key="frame" x="80" y="192" width="214" height="29"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSy-Yc-886">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSy-Yc-886">
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="29" id="57e-FD-UCK"/>
@@ -103,7 +103,7 @@
                                                         <color key="textColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="haq-5m-pqs">
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="haq-5m-pqs">
                                                         <rect key="frame" x="120" y="0.0" width="94" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="29" id="lc0-jW-BEi"/>
@@ -128,11 +128,15 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84362953900000004" green="0.97556561230000005" blue="0.92320168020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="NtY-F4-RSD" firstAttribute="leading" secondItem="EOv-ot-7Fq" secondAttribute="leading" constant="20" id="3Na-jg-YoM"/>
                                     <constraint firstItem="NtY-F4-RSD" firstAttribute="top" secondItem="EOv-ot-7Fq" secondAttribute="top" constant="20" id="BDT-pf-BlM"/>
                                     <constraint firstAttribute="trailing" secondItem="NtY-F4-RSD" secondAttribute="trailing" constant="20" id="KbR-NJ-DEv"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nRt-qI-QYr" appends="YES" id="Lke-yZ-A9j"/>
+                                </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="C9X-5R-fQ6">
                                 <rect key="frame" x="0.0" y="54" width="414" height="104"/>
@@ -203,10 +207,15 @@
                         <outlet property="tenBtn" destination="7y6-Kf-yF0" id="ILz-AX-O22"/>
                         <outlet property="twentyBtn" destination="UtR-dU-EKt" id="WL3-yl-ymo"/>
                         <outlet property="zeroBtn" destination="XzR-0E-Xf7" id="wSE-5R-QlE"/>
-                        <segue destination="Dnf-m2-FPm" kind="presentation" modalPresentationStyle="fullScreen" id="vU2-go-EfU"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="passData" modalPresentationStyle="fullScreen" id="vU2-go-EfU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nRt-qI-QYr">
+                    <connections>
+                        <action selector="dissTap:" destination="BYZ-38-t0r" id="03H-Tg-9NH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>

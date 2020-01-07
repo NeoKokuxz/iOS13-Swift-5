@@ -17,6 +17,11 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var splitNumBtn: UILabel!
     
     var tipPc = 0.1
+    var getBillText = ""
+    var numPPL = 1
+    var finalAmount = ""
+    var billAmountNumber = 0.0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +48,47 @@ class CalculatorViewController: UIViewController {
         tipPc = currentPcNumber
         
         print(tipPc)
-
         
+        billTextField.endEditing(true)
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        splitNumBtn.text = String(format: "%.0f", sender.value)
+        numPPL = Int(sender.value)
     }
     
     @IBAction func calculatePressed(_ sender: Any) {
-        print(tipPc)
+        let getBill = billTextField.text!
+        if getBill != "" {
+            billAmountNumber = Double(getBill)!
+        }
+        //Convert textfield string into double
+        
+        //Calculate struct for user input
+        let calculatetip = calculateTip(tipPc: tipPc, amount: billAmountNumber, numPeople: numPPL)
+        
+        //Calculate totalAmount
+        let totalAmount = billAmountNumber + calculatetip.TipAmount()
+                
+        //Store formatted amount and prepare to pass data
+        finalAmount = String(format: "%.2f", calculatetip.splitAmount(total: totalAmount))
+        
+        //Segue "passData"
+        performSegue(withIdentifier: "passData", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ResultViewController
+        
+        destinationVC.amount = finalAmount
+        destinationVC.numPPL = numPPL
+        destinationVC.tipPc = tipPc
+    }
+    
+    @IBAction func dissTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    
 }
 

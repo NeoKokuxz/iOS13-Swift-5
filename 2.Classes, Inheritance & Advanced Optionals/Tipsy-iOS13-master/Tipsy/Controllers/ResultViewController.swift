@@ -13,10 +13,17 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var settingLabel: UILabel!
     
+    var amount = ""
+    var numPPL = 0
+    var tipPc = 0.1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let newTipPc = Int(tipPc*100)
         // Do any additional setup after loading the view.
+        totalAmountLabel.text = amount
+        settingLabel.text = "Split between \(numPPL) people, with \(newTipPc)% tip"
         
     }
     

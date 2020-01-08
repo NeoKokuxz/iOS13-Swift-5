@@ -4,7 +4,7 @@
 - System color will change automatically, custom color will need to be added to asset in order to modify. 
   - Under asset -> add new color set (default -Light -Dark)
 - Vector image will always stay shape when zoom in. 
-  - Using vector image such as pdf file, Resize [x] Preserve Vector Data
+  - Using vector image such as pdf file, Resize - [x] Preserve Vector Data
   
 ## Swift protocols & Delegate design parttern
 

@@ -5,7 +5,7 @@
   - Under asset -> add new color set (default -Light -Dark)
 - Vector image will always stay shape when zoom in. 
   - Using vector image such as pdf file, 
-  - Resize -> check - [X] Preserve Vector Data
+  - Resize -> check - [X] Preserve Vector Data -> - [X] single scale
   
 ## Swift protocols & Delegate design parttern
 

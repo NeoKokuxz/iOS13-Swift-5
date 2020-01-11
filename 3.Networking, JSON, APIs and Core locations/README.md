@@ -23,15 +23,20 @@ protocol myProtocol {
 - Adopt protocols 
 ![Protocol](https://github.com/NeoKokuxz/iOS13-Swift-5/blob/master/3.Networking%2C%20JSON%2C%20APIs%20and%20Core%20locations/protocol_example.png)
 ```Swift 
-struct myStruct : myProtocol {
-  //Struct  
-}
+//Base
+struct myStruct : myProtocol {}
 
-class myClass : myProtocol {
-  //Class
-}
+class myClass : myProtocol {}
 
+//Usage Struct & Class
+struct myStruct : myFirstProtocol {
+  //Define Struct here
+}
+class myClass : mySuperclass, myFirstProtocol, mySecondProtocol {
+  //Class definition goes here
+}
 ```
+[ReadingGuide-Protocols](https://docs.swift.org/swift-book/LanguageGuide/Protocols.html)
   
 ## APIs - Making Http requests with URLSession
 

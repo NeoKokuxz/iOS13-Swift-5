@@ -35,5 +35,21 @@ class WeatherViewController: UIViewController, UITextFieldDelegate{
         view.endEditing(true) //dismiss keyboard
         return true
     }
+    
+    //Dismiss keyboard condition
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        //dismiss if no input
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Search"
+            return false
+        }
+    }
+    
+    //Clear textfield when done typing
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        searchTextField.text = ""
+    }
 }
 

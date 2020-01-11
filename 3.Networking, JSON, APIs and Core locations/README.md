@@ -42,6 +42,8 @@ class myClass : mySuperclass, myFirstProtocol, mySecondProtocol {
 
 ![API-definition](https://github.com/NeoKokuxz/iOS13-Swift-5/blob/master/3.Networking%2C%20JSON%2C%20APIs%20and%20Core%20locations/APIs-Def.png)
 
+- API links: ? -> starts a query, & -> starts new command 
+
 ## Parse JSON with Native JSON Decoder
 
 ## Computed Properties, closures & extensions

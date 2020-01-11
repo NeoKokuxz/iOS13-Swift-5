@@ -111,5 +111,13 @@ let myNewPenguin = newPenguin()
 myNewEagle.fly() //Only Eagle got access to fly ability
 myNewPenguin.swim()
 
+struct NewFlyingMuseum {
+    func flyingDemo(flyingObject:CanFly){
+        flyingObject.fly()
+    }
+}
+
+let myNewMuseum = NewFlyingMuseum()
+myNewMuseum.flyingDemo(flyingObject: myNewEagle) //myNewEagle adopts the protocol CanFly
 
 

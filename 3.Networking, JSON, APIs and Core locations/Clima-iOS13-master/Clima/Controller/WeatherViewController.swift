@@ -13,25 +13,25 @@ class WeatherViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    
     @IBOutlet weak var searchTextField: UITextField!
+    
+    var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         searchTextField.delegate = self //Self refer to current viewcontroller
-        
     }
 
 
     @IBAction func searchPressed(_ sender: UIButton) {
-        print(searchTextField.text!)
+        weatherManager.fetchWeather(cityName: searchTextField.text!)
         view.endEditing(true) //dismiss keyboard
     }
     
     //keyboard return triggered
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(searchTextField.text!)
+        weatherManager.fetchWeather(cityName: searchTextField.text!)
         view.endEditing(true) //dismiss keyboard
         return true
     }

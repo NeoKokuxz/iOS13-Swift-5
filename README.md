@@ -18,5 +18,5 @@
 ## Projects 
 - [BMI Calculator](https://github.com/NeoKokuxz/IOS13-Swift5/tree/master/2.Classes%2C%20Inheritance%20%26%20Advanced%20Optionals/BMI-Calculator-iOS13-master)
 - [Tip Calculator - Tipsy](https://github.com/NeoKokuxz/iOS13-Swift-5/tree/master/2.Classes%2C%20Inheritance%20%26%20Advanced%20Optionals/Tipsy-iOS13-master) 
-- [Clima](https://github.com/NeoKokuxz/iOS13-Swift-5/tree/master/3.Networking%2C%20JSON%2C%20APIs%20and%20Core%20locations/Clima-iOS13-master)
+- [Weather App - Clima](https://github.com/NeoKokuxz/iOS13-Swift-5/tree/master/3.Networking%2C%20JSON%2C%20APIs%20and%20Core%20locations/Clima-iOS13-master)
 - Coming soon

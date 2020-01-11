@@ -14,9 +14,23 @@ protocol UITextFieldDelegate
 ```
 - A text field calls the methods of its delegate in response to important changes. You use these methods to validate text that was typed by the user, to respond to specific interactions with the keyboard, and to control the overall editing process. Editing begins shortly before the text field becomes the first responder and displays the keyboard (or its assigned input view).
 
-- Protocols
-
 #### Protocols
+```Swift
+protocol myProtocol {
+  //Define requirments 
+}
+```
+- Adopt protocols 
+```Swift 
+struct myStruct : myProtocol {
+  //Struct  
+}
+
+class myClass : myProtocol {
+  //Class
+}
+
+```
   
 ## APIs - Making Http requests with URLSession
 

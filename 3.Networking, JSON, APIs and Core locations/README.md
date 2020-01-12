@@ -44,7 +44,7 @@ class myClass : mySuperclass, myFirstProtocol, mySecondProtocol {
 
 - API links: ? -> starts a query, & -> starts new command 
 
-- Networking 
+### Networking Processes 
   - Step1 : Create URL
   - Step2 : Create URLSession
   - Step3 : Give URLSession a task

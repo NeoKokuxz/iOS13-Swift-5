@@ -106,6 +106,7 @@ calculator(num1:5, num2: 7, operation:add) //return 12 (5+7)
 }
 ```
 
+### - Closure examples:
 ```Swift
 func calculator(num1: Int, num2: Int, operation:(Int, Int)-> Int) -> Int {
   return operation(num1, num2)
@@ -138,8 +139,9 @@ let array = [4,3,7,2,1,9]
 func addOne(n1:Int) -> Int {
   return n1+1
 }
-
-
+```
+### - Map, Reduce and Filter - 3 Highlevel functions
+```Swift
 //Map, Reduce and Filter - 3 Highlevel functions
 array.map(addOne) //return [5,4,8,3,2,10] addOne to every number in array
 //Normal closure

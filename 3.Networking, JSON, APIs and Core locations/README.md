@@ -86,6 +86,7 @@ performRequest(urlString: url) //Pass the api url and request data
 ```
 
 ## Closure
+- normal function inside of another function
 ```Swift 
 func calculator(num1: Int, num2: Int, operation:(Int, Int)-> Int) -> Int {
   return operation(num1, num2)
@@ -97,7 +98,66 @@ func add(n1:Int, n2:Int) -> Int {
 
 calculator(num1:5, num2: 7, operation:add) //return 12 (5+7)
 ```
+### - Closure Syntax
+```Swift 
+//Closure syntax
+{ (parameters) -> return type in
+  statements
+}
+```
 
+```Swift
+func calculator(num1: Int, num2: Int, operation:(Int, Int)-> Int) -> Int {
+  return operation(num1, num2)
+}
+
+//Closure example:
+calculator(num1: 3, num2: 5, operation: { (n1:Int, n2:Int)->Int in 
+    return n1+n2
+}) //return 8 (3+5)
+
+//Simplify the code
+//Int, ->Int, and return can be shorten
+calculator(num1: 3, num2: 5, operation: {(n1, n2) in n1+n2}) //return 8 (3+5)
+
+//Also $0 means first parameter and $1 refers to second parameter like n1, n2
+calculator(num1: 3, num2: 5, operation: {$0+$1}) //return 8 (3+5)
+
+//trailing closure
+let result = calculator(num1: 3, num2: 5) {$0+$1}
+print(result) //return 8
+
+/*
+These shorten syntax is useful, however it reduce the reusability of the code
+*/
+```
+
+```Swift
+let array = [4,3,7,2,1,9]
+
+func addOne(n1:Int) -> Int {
+  return n1+1
+}
+
+
+//Map, Reduce and Filter - 3 Highlevel functions
+array.map(addOne) //return [5,4,8,3,2,10] addOne to every number in array
+//Normal closure
+array.map( { (n1:Int) in
+  n1+1
+})
+
+//Trailing closure
+array.map{$0+1}
+```
+
+```Swift
+//Map functionality
+let array = [4,3,7,2,1,9]
+
+let newArray = array.map("\($0)") //Print each number in array into newArray as String
+print(newArray) //return ["4","3","7","2","1","9"]
+```
 ## Parse JSON with Native JSON Decoder
 
 ## Computed Properties, closures & extensions

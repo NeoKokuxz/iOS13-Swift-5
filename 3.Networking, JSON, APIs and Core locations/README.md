@@ -85,6 +85,19 @@ performRequest(urlString: url) //Pass the api url and request data
     }
 ```
 
+## Closure
+```Swift 
+func calculator(num1: Int, num2: Int, operation:(Int, Int)-> Int) -> Int {
+  return operation(num1, num2)
+}
+
+func add(n1:Int, n2:Int) -> Int {
+  return n1+n2
+}
+
+calculator(num1:5, num2: 7, operation:add) //return 12 (5+7)
+```
+
 ## Parse JSON with Native JSON Decoder
 
 ## Computed Properties, closures & extensions

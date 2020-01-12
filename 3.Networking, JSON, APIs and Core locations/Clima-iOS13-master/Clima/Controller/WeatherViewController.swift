@@ -25,13 +25,12 @@ class WeatherViewController: UIViewController, UITextFieldDelegate{
 
 
     @IBAction func searchPressed(_ sender: UIButton) {
-        weatherManager.fetchWeather(cityName: searchTextField.text!)
         view.endEditing(true) //dismiss keyboard
     }
     
     //keyboard return triggered
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        weatherManager.fetchWeather(cityName: searchTextField.text!)
+//        weatherManager.fetchWeather(cityName: searchTextField.text!)
         view.endEditing(true) //dismiss keyboard
         return true
     }
@@ -49,6 +48,9 @@ class WeatherViewController: UIViewController, UITextFieldDelegate{
     
     //Clear textfield when done typing
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
         searchTextField.text = ""
     }
 }

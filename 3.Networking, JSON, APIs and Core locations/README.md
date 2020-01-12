@@ -44,6 +44,27 @@ class myClass : mySuperclass, myFirstProtocol, mySecondProtocol {
 
 - API links: ? -> starts a query, & -> starts new command 
 
+- Networking 
+  - Step1 : Create URL
+  - Step2 : Create URLSession
+  - Step3 : Give URLSession a task
+  - Step4 : Start the task
+```Swift
+    func performRequest(urlString:String){
+        //Create URL
+        if let url = URL(string: urlString) {
+            //Create URL Session
+            let session = URLSession(configuration: .default) //Use default configuration
+            //Give session a task
+            //CompletionHandler:
+            let task = session.dataTask(with: url, completionHandler: handle(data:response:error:)) //Return URLSessionDataTask
+            //Start the task
+            //Note: newly-initialized tasks begin in suspended state -> use func resume()
+            task.resume()
+        }
+    }
+```
+
 ## Parse JSON with Native JSON Decoder
 
 ## Computed Properties, closures & extensions

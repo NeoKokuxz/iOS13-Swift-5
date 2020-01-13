@@ -160,6 +160,7 @@ let array = [4,3,7,2,1,9]
 let newArray = array.map("\($0)") //Print each number in array into newArray as String
 print(newArray) //return ["4","3","7","2","1","9"]
 ```
+
 ## Parse JSON with Native JSON Decoder
 
 ## Computed Properties, closures & extensions

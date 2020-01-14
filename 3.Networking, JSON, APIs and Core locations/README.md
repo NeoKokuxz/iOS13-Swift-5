@@ -160,9 +160,22 @@ let array = [4,3,7,2,1,9]
 let newArray = array.map("\($0)") //Print each number in array into newArray as String
 print(newArray) //return ["4","3","7","2","1","9"]
 ```
-
 ## Parse JSON with Native JSON Decoder
+JSON - JavaScript Object Notation
+- Parse JSON data into an Swiftobject
+```Swift
 
+//This is decodable Object using Struct
+struct WeatherData: Decodable {
+    let name: String
+}
+
+//This is decoder for JSON file
+let decoder = JSONDecoder()
+decoder.decode(type: protocol, from: data) <- Note that this needs decodable type NOT object
+//In order to use type over object, add .self to the object
+decoder.decode(type: WeatherData.self, from: data) <- decodable type 
+```
 ## Computed Properties, closures & extensions
 
 ## Core location & GPS data

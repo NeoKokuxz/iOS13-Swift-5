@@ -84,6 +84,73 @@ performRequest(urlString: url) //Pass the api url and request data
         }
     }
 ```
+### - Map, Reduce and Filter - 3 Highlevel functions
+```Swift
+//Map, Reduce and Filter - 3 Highlevel functions
+array.map(addOne) //return [5,4,8,3,2,10] addOne to every number in array
+//Normal closure
+array.map( { (n1:Int) in
+  n1+1
+})
+
+//Trailing closure
+array.map{$0+1}
+```
+
+```Swift
+//Map functionality
+let array = [4,3,7,2,1,9]
+
+let newArray = array.map("\($0)") //Print each number in array into newArray as String
+print(newArray) //return ["4","3","7","2","1","9"]
+```
+## Parse JSON with Native JSON Decoder
+JSON - JavaScript Object Notation
+- Parse JSON data into an Swiftobject
+```Swift
+
+//This is decodable Object using Struct
+struct WeatherData: Decodable {
+    let name: String
+}
+
+//This is decoder for JSON file
+let decoder = JSONDecoder()
+decoder.decode(type: protocol, from: data) <- Note that this needs decodable type NOT object
+//In order to use type over object, add .self to the object
+decoder.decode(type: WeatherData.self, from: data) <- decodable type 
+```
+## Computed Properties, closures & extensions
+### Computed Properties vs. Stored Properties
+```Swift
+    //Stored Property
+    let conditionID : Int
+    let cityName : String
+    let temp : Double
+    
+    //Computed Property
+    var conditionName : String {
+        //depends on the value of stored property conditionID
+        switch conditionID {
+        case 200...232:
+            return "cloud.bolt"
+        case 300...321:
+            return "cloud.drizzle"
+        case 500...531:
+            return "cloud.rain"
+        case 600...622:
+            return "cloud.snow"
+        case 701...781:
+            return "cloud.fog"
+        case 800:
+            return "sun.max"
+        case 801...804:
+            return "cloud.bolt"
+        default:
+            return "cloud"
+        }
+    }
+```
 
 ## Closure
 - normal function inside of another function
@@ -140,42 +207,4 @@ func addOne(n1:Int) -> Int {
   return n1+1
 }
 ```
-### - Map, Reduce and Filter - 3 Highlevel functions
-```Swift
-//Map, Reduce and Filter - 3 Highlevel functions
-array.map(addOne) //return [5,4,8,3,2,10] addOne to every number in array
-//Normal closure
-array.map( { (n1:Int) in
-  n1+1
-})
-
-//Trailing closure
-array.map{$0+1}
-```
-
-```Swift
-//Map functionality
-let array = [4,3,7,2,1,9]
-
-let newArray = array.map("\($0)") //Print each number in array into newArray as String
-print(newArray) //return ["4","3","7","2","1","9"]
-```
-## Parse JSON with Native JSON Decoder
-JSON - JavaScript Object Notation
-- Parse JSON data into an Swiftobject
-```Swift
-
-//This is decodable Object using Struct
-struct WeatherData: Decodable {
-    let name: String
-}
-
-//This is decoder for JSON file
-let decoder = JSONDecoder()
-decoder.decode(type: protocol, from: data) <- Note that this needs decodable type NOT object
-//In order to use type over object, add .self to the object
-decoder.decode(type: WeatherData.self, from: data) <- decodable type 
-```
-## Computed Properties, closures & extensions
-
 ## Core location & GPS data

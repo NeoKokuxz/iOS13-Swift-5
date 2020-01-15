@@ -152,7 +152,7 @@ decoder.decode(type: WeatherData.self, from: data) <- decodable type
     }
 ```
 
-## Closure
+### - Closure
 - normal function inside of another function
 ```Swift 
 func calculator(num1: Int, num2: Int, operation:(Int, Int)-> Int) -> Int {
@@ -165,7 +165,7 @@ func add(n1:Int, n2:Int) -> Int {
 
 calculator(num1:5, num2: 7, operation:add) //return 12 (5+7)
 ```
-### - Closure Syntax
+#### - Closure Syntax
 ```Swift 
 //Closure syntax
 { (parameters) -> return type in
@@ -173,7 +173,7 @@ calculator(num1:5, num2: 7, operation:add) //return 12 (5+7)
 }
 ```
 
-### - Closure examples:
+#### - Closure examples:
 ```Swift
 func calculator(num1: Int, num2: Int, operation:(Int, Int)-> Int) -> Int {
   return operation(num1, num2)
@@ -205,6 +205,25 @@ let array = [4,3,7,2,1,9]
 
 func addOne(n1:Int) -> Int {
   return n1+1
+}
+```
+
+#### Typealiases
+- Typealiases
+ - Combine mutiple protocols together
+ - Codable -> Decodable & Encodable //Decode from and Encode to JSON file
+```Swift 
+//Codable
+struct WeatherData: Codable {
+  //definition
+}
+
+//Decodable + Encodable = Codable
+struct Main: Decodable & Encodable  {
+  //definition
+}
+struct Weather: Decodable & Encodeable {
+  //definition
 }
 ```
 ## Core location & GPS data

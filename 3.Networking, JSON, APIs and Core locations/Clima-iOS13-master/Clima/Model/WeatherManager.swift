@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol WeatherManagerDelegate {
-    func updateWeather(weather: WeatherModel)
+    func didUpdateWeather(_ weatherManager:WeatherManager, weather: WeatherModel)
+    func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
@@ -24,10 +26,10 @@ struct WeatherManager {
         //        print(cityName) //Test cityName
         //        print(url) //Test url
         
-        performRequest(urlString: url)
+        performRequest(with: url)
     }
     
-    func performRequest(urlString:String){
+    func performRequest(with urlString:String){
         //Create URL
         if let url = URL(string: urlString) {
             //Create URL Session
@@ -38,25 +40,25 @@ struct WeatherManager {
                 //Inside closure:
                 if error != nil {
                     print("Error!")
-                    print(error!)
+                    self.delegate?.didFailWithError(error: error!)
                     return //exit out the function
                 }
                 
                 if let safeData = data {
                     //Parse safeData into Swift Object
-                    if let weather = self.parseJSON(weatherData: safeData){
-                        self.delegate?.updateWeather(weather: weather)
+                    if let weather = self.parseJSON(safeData){
+                        self.delegate?.didUpdateWeather(self, weather: weather)
                     }
                 }
             } //Closure ends
-    
+            
             //Start the task
             //Note: newly-initialized tasks begin in suspended state -> use func resume()
             task.resume()
         }
     }
     
-    func parseJSON(weatherData: Data) -> WeatherModel? {
+    func parseJSON(_ weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         
         do {
@@ -70,9 +72,17 @@ struct WeatherManager {
             return weather //return weather object
             
         } catch {
-            print(error)
+            delegate?.didFailWithError(error: error)
             return nil //have to set return type WeatherModel to optional?
         }
     }
 }
 
+//MARK: - fetchWeather using Lat & Lon
+extension WeatherManager {
+    func fetchWeather(Latitude: CLLocationDegrees, Longitude: CLLocationDegrees) {
+        let url = "\(weatherURL)&appid=\(apiKey)&lat=\(Latitude)&lon=\(Longitude)"
+        print(url)
+        performRequest(with: url)
+    }
+}

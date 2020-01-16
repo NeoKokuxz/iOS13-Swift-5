@@ -121,7 +121,7 @@ decoder.decode(type: protocol, from: data) <- Note that this needs decodable typ
 decoder.decode(type: WeatherData.self, from: data) <- decodable type 
 ```
 ## Computed Properties, closures & extensions
-### Computed Properties vs. Stored Properties
+### - Computed Properties vs. Stored Properties
 ```Swift
     //Stored Property
     let conditionID : Int
@@ -208,7 +208,7 @@ func addOne(n1:Int) -> Int {
 }
 ```
 
-#### Typealiases
+#### - Typealiases
 - Typealiases
  - Combine mutiple protocols together
  - Codable -> Decodable & Encodable //Decode from and Encode to JSON file
@@ -227,7 +227,7 @@ struct Weather: Decodable & Encodeable {
 }
 ```
 
-#### Parameter names
+#### - Parameter names
 ```Swift 
 //Calling the function
 myFunc(name:"Neo")
@@ -235,6 +235,70 @@ myFunc(name:"Neo")
 func myFunc(name iName: Type){
   print(iName) //return "Neo"
 }
+
+//To Omit parameter name just add _ to the external name before internal name
+myFunc("Neo") //Omitted name
+
+func myFunc(_ iName: Type){
+  print(iName) //return "Neo"
+}
+
 ```
 - name is external name when calling the function, iName is the internal name that can be use inside the function itself.
+
+
+#### - Extensions
+- Similar overload function in Java
+- Extent functions
+```Swift
+//Extent Double and make it round to desire precision places.
+extension Double {
+  func round(to places: Int) -> Double {
+    let precision = pow(10, Double(places)) //10^5 power
+    let n = self //Current double value 3.1415926
+    n = n * precision //3.1415926 * 10^5
+    n.round() //314159
+    n = n / precision //3.14149
+    return n
+  }
+}
+
+var myDouble = 3.1415926
+myDouble.round(to: 5) //5 precision places 3.14159
+```
+- Extent Protocols
+```Swift
+extension someProtocol {
+  //define default behavior 
+}
+
+extension someFunc: someProtocol {
+  //New functionality
+}
+```
+#### Mark Comment
+```Swift
+//Mark: - <#Section Name#>
+```
 ## Core location & GPS data
+```Swift
+import CoreLocation
+
+//MARK: - CLLocationManagerDelegate
+extension WeatherViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()//Stop update location in order to request location later on
+            let lat = location.coordinate.latitude
+            let long = location.coordinate.longitude
+//            print(lat, long)
+            weatherManager.fetchWeather(Latitude: lat, Longitude: long)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+}
+
+```

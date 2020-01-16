@@ -226,4 +226,15 @@ struct Weather: Decodable & Encodeable {
   //definition
 }
 ```
+
+#### Parameter names
+```Swift 
+//Calling the function
+myFunc(name:"Neo")
+
+func myFunc(name iName: Type){
+  print(iName) //return "Neo"
+}
+```
+- name is external name when calling the function, iName is the internal name that can be use inside the function itself.
 ## Core location & GPS data

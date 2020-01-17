@@ -285,6 +285,7 @@ extension someFunc: someProtocol {
 import CoreLocation
 
 //MARK: - CLLocationManagerDelegate
+//use both method together to make locationManager work
 extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {

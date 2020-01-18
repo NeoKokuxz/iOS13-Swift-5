@@ -25,7 +25,6 @@ struct WeatherManager {
         let url = "\(weatherURL)&appid=\(apiKey)&q=\(cityName)"
         //        print(cityName) //Test cityName
         //        print(url) //Test url
-        
         performRequest(with: url)
     }
     

@@ -39,7 +39,11 @@ extension ViewController: UIPickerViewDataSource {
 //MARK: - UIPickerViewDelegate
 extension ViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         return coinManager.currencyArray[row] //Check current currency label in the array
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currencyName = coinManager.currencyArray[row]
+        coinManager.getCurrencyPrice(for: currencyName)
     }
 }

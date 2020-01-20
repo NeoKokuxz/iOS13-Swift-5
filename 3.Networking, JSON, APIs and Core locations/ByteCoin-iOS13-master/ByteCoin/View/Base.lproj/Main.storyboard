@@ -96,8 +96,8 @@
                         <viewLayoutGuide key="safeArea" id="CjI-yV-vnC"/>
                     </view>
                     <connections>
-                        <outlet property="currencyDisplay" destination="N2a-Ax-iRV" id="3Za-ik-2A3"/>
-                        <outlet property="currencyUnit" destination="MAn-y0-nXv" id="T6d-n0-qIp"/>
+                        <outlet property="currencyLabel" destination="MAn-y0-nXv" id="T6d-n0-qIp"/>
+                        <outlet property="currencyValue" destination="N2a-Ax-iRV" id="3Za-ik-2A3"/>
                         <outlet property="pickerLabel" destination="ct2-jk-pgH" id="DWb-MB-lUe"/>
                     </connections>
                 </viewController>

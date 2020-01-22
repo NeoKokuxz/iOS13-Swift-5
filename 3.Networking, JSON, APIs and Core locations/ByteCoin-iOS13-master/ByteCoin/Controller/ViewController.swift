@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var currencyValue: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var pickerLabel: UIPickerView!
     
-    let coinManager = CoinManager() //Initialize coinManager
+    var coinManager = CoinManager() //Initialize coinManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         
         pickerLabel.dataSource = self //Set picker data source to current ViewController
         pickerLabel.delegate = self //Set picker delegate to current ViewController
+        
+        coinManager.delegate = self //Set custom coinManager delegate to update currencyValue label
     }
 }
 
@@ -44,6 +46,20 @@ extension ViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let currencyName = coinManager.currencyArray[row]
+        currencyLabel.text = currencyName
         coinManager.getCurrencyPrice(for: currencyName)
+    }
+}
+
+//MARK: - CoinManagerDelegate
+extension ViewController: CoinManagerDelegate {
+    func didFailWithError(with error: Error) {
+        print(error)
+    }
+    
+    func didUpdateWithPrice(_ price: String) {
+        DispatchQueue.main.async {
+            self.currencyValue.text = price
+        }
     }
 }

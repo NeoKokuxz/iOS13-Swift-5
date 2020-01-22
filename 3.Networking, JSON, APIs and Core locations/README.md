@@ -120,6 +120,27 @@ decoder.decode(type: protocol, from: data) <- Note that this needs decodable typ
 //In order to use type over object, add .self to the object
 decoder.decode(type: WeatherData.self, from: data) <- decodable type 
 ```
+```Swift
+    //Complete func for parseJSON
+    func parseJSON(_ weatherData: Data) -> WeatherModel? {
+        let decoder = JSONDecoder()
+        
+        do {
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            
+            let id = decodedData.weather[0].id
+            let temp = decodedData.main.temp
+            let name = decodedData.name
+            
+            let weather = WeatherModel(conditionID: id, cityName: name, temp: temp)
+            return weather //return weather object
+            
+        } catch {
+            delegate?.didFailWithError(error: error)
+            return nil //have to set return type WeatherModel to optional?
+        }
+    }
+```
 ## Computed Properties, closures & extensions
 ### - Computed Properties vs. Stored Properties
 ```Swift

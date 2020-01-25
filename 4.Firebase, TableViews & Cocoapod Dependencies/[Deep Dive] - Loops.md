@@ -19,3 +19,12 @@ for name in names {
  print(name) //A B C
 }
 ```
+
+```Swift
+//with in range
+for _ in 1...5
+
+//Half range
+for_ in 1...<5 // 1-4
+```
+

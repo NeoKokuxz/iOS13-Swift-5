@@ -12,7 +12,7 @@ for letter in titleText {
  charCount += 1
 }
 ```
-## For In Loop
+## - For In Loop
 ```Swift
 let names = ["A", "B", "C"]
 for name in names {

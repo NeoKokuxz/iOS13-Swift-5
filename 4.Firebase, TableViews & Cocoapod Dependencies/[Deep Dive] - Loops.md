@@ -1,4 +1,4 @@
-# Loop
+# Loops
 
 ```Swift
 titleLabel.text = ""
@@ -10,5 +10,12 @@ for letter in titleText {
  self.titleLabel.text?.append(letter)
  }//End of timer
  charCount += 1
+}
+```
+## For In Loop
+```Swift
+let names = ["A", "B", "C"]
+for name in names {
+ print(name) //A B C
 }
 ```

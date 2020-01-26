@@ -20,4 +20,5 @@
 - [Tip Calculator - Tipsy](https://github.com/NeoKokuxz/iOS13-Swift-5/tree/master/2.Classes%2C%20Inheritance%20%26%20Advanced%20Optionals/Tipsy-iOS13-master) 
 - [Weather App - Clima](https://github.com/NeoKokuxz/iOS13-Swift-5/tree/master/3.Networking%2C%20JSON%2C%20APIs%20and%20Core%20locations/Clima-iOS13-master)
 - [Bitcoin Price Checker - ByteCoin](https://github.com/NeoKokuxz/iOS13-Swift-5/tree/master/3.Networking%2C%20JSON%2C%20APIs%20and%20Core%20locations/ByteCoin-iOS13-master)
+- [Online Chat App - FlashChat](https://github.com/NeoKokuxz/iOS13-Swift-5/tree/master/4.Firebase%2C%20TableViews%20%26%20Cocoapod%20Dependencies/Flash-Chat-iOS13-master)
 - Coming soon

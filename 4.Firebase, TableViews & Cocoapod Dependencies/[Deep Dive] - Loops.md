@@ -28,3 +28,9 @@ for _ in 1...5
 for_ in 1...<5 // 1-4
 ```
 
+## While Loop
+```Swift
+while conditionTrue {
+ print("Loop running")
+}
+```

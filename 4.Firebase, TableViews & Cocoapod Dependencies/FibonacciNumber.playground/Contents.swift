@@ -22,5 +22,8 @@ func fibonacci(n: Int) {
         print(fibArray)
     }
 }
-
-fibonacci(n: 3)
+fibonacci(n: 0) //Zero output
+fibonacci(n: 1) //0
+fibonacci(n: 2) //[0, 1]
+fibonacci(n: 3) //[0, 1, 1]
+fibonacci(n: 10) //[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]

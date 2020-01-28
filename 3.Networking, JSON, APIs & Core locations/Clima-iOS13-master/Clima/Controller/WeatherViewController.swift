@@ -30,9 +30,6 @@ class WeatherViewController: UIViewController{
         locationManager.requestWhenInUseAuthorization() //Request permission to use location
         locationManager.requestLocation() //Request user location once -For GPS apps -> use startUpdatingLocation()
     }
-    
-    
-    
 }
 
 //MARK: - UITextFieldDelegate
@@ -85,7 +82,6 @@ extension WeatherViewController : WeatherManagerDelegate {
         //report Error
         print(error)
     }
-    
 }
 
 //MARK: - CLLocationManagerDelegate
@@ -95,7 +91,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()//Stop update location in order to request location later on
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
-//            print(lat, long)
+            //            print(lat, long)
             weatherManager.fetchWeather(Latitude: lat, Longitude: long)
         }
     }

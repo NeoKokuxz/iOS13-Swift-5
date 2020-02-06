@@ -30,6 +30,6 @@ class WelcomeViewController: UIViewController {
 //            }//End of timer
 //            charCount += 1
 //        }
-        titleLabel.text = "⚡️FlashChat"
+        titleLabel.text = K.titleString
     }
 }//End of VC

@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController {
                 } else {
                     //Pass to ChatViewController
                     print("Auth")
-                    self.performSegue(withIdentifier: "registerToChat", sender: self)
+                    self.performSegue(withIdentifier: Constants.registerSeg, sender: self)
                 }
             }
         }
